@@ -1,6 +1,9 @@
 [build]
 functions=".netlify/functions"
 
+[[plugins]]
+package = "/.netlify/plugins/netlify-plugin-nuxtlify"
+
 [[redirects]]
 from="/*"
 to="/.netlify/functions/nuxtlify/:splat"
