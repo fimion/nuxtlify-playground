@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { loadNuxt } = require('nuxt')
 async function handler(event) {
-  fs.readdir('.', (err, files) => {
+  fs.readdir('./src', (err, files) => {
     // eslint-disable-next-line no-console
     console.log(err)
     // eslint-disable-next-line no-console
