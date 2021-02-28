@@ -8,7 +8,7 @@ module.exports = {
     const FUNCTIONS_SRC = constants.FUNCTIONS_SRC || DEFAULT_FUNCTIONS_SRC
     const NUXTLIFY_DEST = path.join(FUNCTIONS_SRC, 'nuxtlify')
     fs.copySync(path.join(__dirname, 'nuxtlify'), NUXTLIFY_DEST)
-    fs.copySync('.nuxt', path.join(NUXTLIFY_DEST, 'nuxt'))
+    fs.copySync('.nuxt', path.join(NUXTLIFY_DEST, '.nuxt'))
     const clientConfig = fs.readJsonSync(
       path.join('.nuxt', 'dist', 'server', 'client.manifest.json')
     )

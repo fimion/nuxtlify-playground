@@ -1,0 +1,7 @@
+{
+  "name": "nuxtlify",
+  "version": "1.0.0",
+  "files": ["index.js", ".nuxt/**"],
+  "dependencies": {
+  }
+}
