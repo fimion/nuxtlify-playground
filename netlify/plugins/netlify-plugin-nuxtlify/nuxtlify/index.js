@@ -1,13 +1,13 @@
 const fs = require('fs')
 const { loadNuxt } = require('nuxt')
 async function handler(event) {
-  fs.readdir(__dirname, (err, files) => {
+  fs.readdir(__dirname + '/.nuxt', (err, files) => {
     // eslint-disable-next-line no-console
     console.log(err)
     // eslint-disable-next-line no-console
     console.log(files)
   })
-  const nuxt = await loadNuxt({ for: 'start', rootDir: './src' })
+  const nuxt = await loadNuxt({ for: 'start', rootDir: __dirname })
 
   const searchParams = new URLSearchParams()
 
