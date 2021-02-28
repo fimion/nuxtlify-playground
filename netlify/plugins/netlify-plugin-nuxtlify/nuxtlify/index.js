@@ -1,4 +1,10 @@
+try {
+  require('./.nuxt/**')
+} catch (e) {
+  // ignore this
+}
 const { loadNuxt } = require('nuxt')
+
 async function handler(event) {
   let nuxt
   try {
