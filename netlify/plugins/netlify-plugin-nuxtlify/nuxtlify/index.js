@@ -15,7 +15,7 @@ async function handler(event) {
       headers: {
         contentType: 'text/plain',
       },
-      body: e,
+      body: e.toString(),
     }
   }
 
