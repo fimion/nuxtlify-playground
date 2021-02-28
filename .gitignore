@@ -91,3 +91,7 @@ sw.*
 
 # Local Netlify folder
 .netlify
+
+# build artifacts
+static/_nuxt
+netlify/functions

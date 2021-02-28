@@ -1,2 +1,6 @@
 [[plugins]]
 package = "./netlify/plugins/netlify-plugin-nuxtlify"
+
+[build]
+publish = "static"
+command = "yarn build"
