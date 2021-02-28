@@ -8,9 +8,13 @@ async function handler(event) {
       buildDir: './nuxt',
     })
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e)
     return {
       statusCode: 500,
+      headers: {
+        contentType: 'text/plain',
+      },
       body: e,
     }
   }
