@@ -4,8 +4,7 @@ async function handler(event) {
   try {
     nuxt = await loadNuxt({
       ready: true,
-      for: 'start',
-      server: true,
+      for: 'dev',
       rootDir: __dirname,
       buildDir: 'nuxt',
     })
