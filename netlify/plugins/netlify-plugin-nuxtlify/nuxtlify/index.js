@@ -7,7 +7,7 @@ const OVERRIDES = {
   start: { dev: false, _start: true },
 }
 
-export async function loadNuxt(loadOptions) {
+async function loadNuxt(loadOptions) {
   // Normalize loadOptions
   if (typeof loadOptions === 'string') {
     loadOptions = { for: loadOptions }
