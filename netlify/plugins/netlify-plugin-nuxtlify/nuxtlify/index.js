@@ -3,11 +3,7 @@ async function handler(event) {
   const nuxt = await loadNuxt({
     for: 'start',
     rootDir: __dirname,
-    buildDir: 'nuxt',
-    srcDir: 'nuxt',
-    generator: {
-      dir: 'nuxt',
-    },
+    options: { buildDir: 'nuxt' },
   })
 
   const searchParams = new URLSearchParams()
