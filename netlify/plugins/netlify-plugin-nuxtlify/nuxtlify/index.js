@@ -39,7 +39,7 @@ async function loadNuxt(loadOptions) {
 }
 
 const nuxtLoader = loadNuxt({
-  for: 'dev',
+  for: 'start',
   rootDir: __dirname,
   buildDir: 'nuxt',
 })
