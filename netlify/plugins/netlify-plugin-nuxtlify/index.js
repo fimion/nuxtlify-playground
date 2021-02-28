@@ -1,10 +1,3 @@
-/*
-[[redirects]]
-from="/*"
-to="/.netlify/functions/nuxtlify/:splat"
-status=200
-force=true
- */
 const path = require('path')
 const { EOL } = require('os')
 const fs = require('fs-extra')

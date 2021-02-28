@@ -1,42 +1,42 @@
-const { loadNuxt} = require("nuxt");
-
-const loadedNuxt = loadNuxt('start')
+const { loadNuxt } = require('nuxt')
 
 async function handler(event) {
-  const nuxt = await loadedNuxt;
+  const nuxt = await loadNuxt('start')
 
-  const searchParams = new URLSearchParams();
+  const searchParams = new URLSearchParams()
 
   Object.keys(event.queryStringParameters).forEach((e) => {
-    searchParams.append(e, event.queryStringParameters[e]);
-  });
+    searchParams.append(e, event.queryStringParameters[e])
+  })
 
-  const queryString = searchParams.toString().length ? `?${searchParams.toString()}` : '';
+  const queryString = searchParams.toString().length
+    ? `?${searchParams.toString()}`
+    : ''
 
-  const route = event.path + queryString;
-  const {html, error, redirected} = await nuxt.renderRoute(route);
-  if(error){
+  const route = event.path + queryString
+  const { html, error, redirected } = await nuxt.renderRoute(route)
+  if (error) {
     return {
       statusCode: error.statusCode,
       body: error.message,
     }
   }
-  if(redirected){
+  if (redirected) {
     return {
       statusCode: redirected.status,
-      headers:{
+      headers: {
         location: redirected.path,
-      }
+      },
     }
   }
 
   return {
-    statusCode:200,
-    headers:{
-      contentType:'text/html',
+    statusCode: 200,
+    headers: {
+      contentType: 'text/html',
     },
-    body:html,
+    body: html,
   }
 }
 
-exports.handler = handler;
+exports.handler = handler
