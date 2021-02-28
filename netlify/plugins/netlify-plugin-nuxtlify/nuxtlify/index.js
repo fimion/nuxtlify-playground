@@ -1,16 +1,13 @@
-const { loadNuxt, loadNuxtConfig } = require('nuxt')
+const { loadNuxt } = require('nuxt')
 async function handler(event) {
   let nuxt
   try {
-    const nuxtConfig = await loadNuxtConfig({
-      for: 'start',
+    nuxt = await loadNuxt({
+      ready: true,
+      for: 'build',
       rootDir: __dirname,
-      buildDir: './nuxt',
+      buildDir: 'nuxt',
     })
-
-    console.log(nuxtConfig)
-
-    nuxt = await loadNuxt(nuxtConfig)
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log(e)
