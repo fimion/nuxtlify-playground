@@ -1,0 +1,7 @@
+{
+  "name": "netlify-plugin-nuxtlify",
+  "version": "1.0.0",
+  "dependencies": {
+    "fs-extra": "^9.1.0"
+  }
+}

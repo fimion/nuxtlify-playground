@@ -1,8 +1,8 @@
 [build]
-functions=".netlify/functions"
+functions="./netlify/functions"
 
 [[plugins]]
-package = "/.netlify/plugins/netlify-plugin-nuxtlify"
+package = "./netlify/plugins/netlify-plugin-nuxtlify"
 
 [[redirects]]
 from="/*"
