@@ -31,5 +31,6 @@ module.exports = {
     redirects.push('# nuxt catch alls')
     redirects.push('/_nuxt/* /_nuxt/:splat 200')
     redirects.push('/* /.netlify/functions/nuxtlify/:splat 200!')
+    fs.writeFileSync('_redirects', redirects.join(EOL))
   },
 }
