@@ -11,6 +11,7 @@ async function handler(event) {
     for: 'start',
     rootDir: __dirname,
     buildDir: 'nuxt',
+    srcDir: 'nuxt',
   })
 
   const searchParams = new URLSearchParams()
