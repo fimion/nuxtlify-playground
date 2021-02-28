@@ -1,10 +1,19 @@
 const { loadNuxt } = require('nuxt')
 async function handler(event) {
-  const nuxt = await loadNuxt({
-    for: 'start',
-    rootDir: __dirname,
-    buildDir: './nuxt',
-  })
+  let nuxt
+  try {
+    nuxt = await loadNuxt({
+      for: 'start',
+      rootDir: __dirname,
+      buildDir: './nuxt',
+    })
+  } catch (e) {
+    console.log(e)
+    return {
+      statusCode: 500,
+      body: e,
+    }
+  }
 
   const searchParams = new URLSearchParams()
 
