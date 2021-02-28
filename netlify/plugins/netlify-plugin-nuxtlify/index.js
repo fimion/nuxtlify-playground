@@ -8,7 +8,7 @@ module.exports = {
     const FUNCTIONS_SRC = constants.FUNCTIONS_SRC || DEFAULT_FUNCTIONS_SRC
     const NUXTLIFY_DEST = path.join(FUNCTIONS_SRC, 'nuxtlify')
     fs.copySync(path.join(__dirname, 'nuxtlify'), NUXTLIFY_DEST)
-    fs.copySync('.nuxt', path.join(NUXTLIFY_DEST, '.nuxt'))
+    fs.copySync('.nuxt', path.join(NUXTLIFY_DEST, 'nuxt'))
     const clientConfig = fs.readJsonSync(
       path.join('.nuxt', 'dist', 'server', 'client.manifest.json')
     )
@@ -22,7 +22,9 @@ module.exports = {
       redirects.push(fs.readFileSync('_redirects', 'utf8'))
     }
     redirects.push('# nuxt catch alls')
-    redirects.push('/_nuxt/* /_nuxt/:splat 200')
+    redirects.push(
+      `/${clientConfig.publicPath}/* /${clientConfig.publicPath}/:splat 200`
+    )
     redirects.push('/* /.netlify/functions/nuxtlify/:splat 200!')
     fs.writeFileSync(
       path.join(constants.PUBLISH_DIR, '_redirects'),
