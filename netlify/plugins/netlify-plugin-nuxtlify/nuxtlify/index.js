@@ -38,14 +38,16 @@ async function loadNuxt(loadOptions) {
   return nuxt
 }
 
+const nuxtLoader = loadNuxt({
+  for: 'dev',
+  rootDir: __dirname,
+  buildDir: 'nuxt',
+})
+
 async function handler(event) {
   let nuxt
   try {
-    nuxt = await loadNuxt({
-      for: 'dev',
-      rootDir: __dirname,
-      buildDir: 'nuxt',
-    })
+    nuxt = await nuxtLoader
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log(e)
