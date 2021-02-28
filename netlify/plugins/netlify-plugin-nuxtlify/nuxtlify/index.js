@@ -1,7 +1,7 @@
 const { loadNuxt } = require('nuxt')
 
 async function handler(event) {
-  const nuxt = await loadNuxt('start')
+  const nuxt = await loadNuxt({ for: 'start', rootDir: './src' })
 
   const searchParams = new URLSearchParams()
 
