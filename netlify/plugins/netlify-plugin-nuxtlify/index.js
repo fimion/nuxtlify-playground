@@ -30,5 +30,14 @@ module.exports = {
       path.join(constants.PUBLISH_DIR, '_redirects'),
       redirects.join(EOL)
     )
+
+    const lambdaPackageJson = fs.readJsonSync(
+      path.join(NUXTLIFY_DEST, 'package.json')
+    )
+    lambdaPackageJson.dependencies = packageJson.dependencies
+    fs.writeJsonSync(
+      path.join(NUXTLIFY_DEST, 'package.json'),
+      lambdaPackageJson
+    )
   },
 }
