@@ -1,3 +1,4 @@
+require('./nuxt/dist/server/server.js')
 const { loadNuxtConfig, Nuxt } = require('nuxt')
 
 const OVERRIDES = {
